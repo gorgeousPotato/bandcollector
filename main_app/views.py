@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Band
+from .forms import AlbumForm
 
 
 def home(request):
@@ -17,8 +18,10 @@ def bands_index(request):
 
 def bands_detail(request, band_id):
   band=Band.objects.get(id=band_id)
+  album_form = AlbumForm()
   return render(request, 'bands/detail.html', {
-    'band': band
+    'band': band,
+    'album_form': album_form
   })
 
 class BandCreate(CreateView):
@@ -32,3 +35,11 @@ class BandUpdate(UpdateView):
 class BandDelete(DeleteView):
   model = Band
   success_url = '/bands'
+
+def add_album(request, band_id):
+  form = AlbumForm(request.POST)
+  if form.is_valid():
+    new_album = form.save(commit=False)
+    new_album.band_id = band_id
+    new_album.save()
+  return redirect('detail', band_id = band_id)
