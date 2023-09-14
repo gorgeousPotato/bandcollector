@@ -1,3 +1,11 @@
 from django.db import models
 
-# Create your models here.
+class Band(models.Model):
+  name=models.CharField(max_length=100)
+  city=models.CharField(max_length=100)
+  country=models.CharField(max_length=100)
+  formed_in=models.IntegerField()
+
+  def __str__(self):
+    return f"{self.name} ({self.id})"
+
