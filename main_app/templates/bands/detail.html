@@ -10,6 +10,10 @@
         <p>Country: {{ band.country }}</p>
         <p>Formed in: {{ band.formed_in }}</p>
       </div>
+      <div class="card-action">
+        <a href="{% url 'bands_update' band.id %}">Edit</a>
+        <a href="{% url 'bands_delete' band.id %}">Delete</a>
+      </div>
   </div>
 
 
