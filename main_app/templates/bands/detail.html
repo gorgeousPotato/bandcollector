@@ -1,19 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Bands List</h1>
+<h1>Band Detail</h1>
 
-{% for band in bands %}
   <div class="card">
-    <a href="{% url 'detail' band.id %}">
       <div class="card-content">
         <span class="card-title">{{ band.name }}</span>
         <p>City: {{ band.city }}</p>
         <p>Country: {{ band.country }}</p>
         <p>Formed in: {{ band.formed_in }}</p>
       </div>
-    </a> 
   </div>
-{% endfor %}
+
 
 {% endblock %}
