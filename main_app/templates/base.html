@@ -19,6 +19,8 @@
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'genres_create' %}">Add a Genre</a></li>
+          <li><a href="{% url 'genres_index' %}">View All Genres</a></li>
           <li><a href="{% url 'bands_create' %}">Add a Band</a></li>
           <li><a href="{% url 'index' %}">View All Bands</a></li>
         </ul>
@@ -30,7 +32,7 @@
     {% endblock %}
   </main>
   <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2023 Band Collector &nbsp;</div>
+    <div class="right">All Rights Reserved, &copy; {% now "Y" %} Band Collector &nbsp;</div>
   </footer>
 </body>
 </html>

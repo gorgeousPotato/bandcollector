@@ -6,7 +6,7 @@
 {% else %}
   <h1>Add Band</h1>
 {% endif %}
-  <form action="" method="POST">
+  <form action="" method="POST" class="add-band-form">
     {% csrf_token %}
     <table>
       {{ form.as_table }}

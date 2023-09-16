@@ -2,6 +2,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #060a0c;
+  color:white;
   
 }
 
@@ -12,4 +14,56 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+  background-color: #060a0c;
 }
+
+.nav-wrapper {
+  background-color: #060a0c;
+  
+} 
+
+.card {
+  background-color: #1B262C;
+}
+
+nav {
+  box-shadow: none;
+}
+
+.btn {
+  background-color: #3282B8;
+  
+}
+
+.btn:hover {
+  background-color: #175a86;
+}
+
+.card-panel {
+  background-color: #1B262C;
+}
+
+#id_date {
+  color: grey;
+}
+
+#id_name {
+  color: white;
+}
+
+.add-band-form input {
+  color: white;
+}
+
+.select-dropdown {
+  color: grey;
+}
+
+.datepicker-table {
+  color: grey
+}
+
+
+
+
+

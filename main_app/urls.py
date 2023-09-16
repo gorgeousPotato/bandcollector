@@ -10,4 +10,11 @@ urlpatterns = [
   path('bands/<int:pk>/update/', views.BandUpdate.as_view(), name='bands_update'),
   path('bands/<int:pk>/delete/', views.BandDelete.as_view(), name='bands_delete'),
   path('bands/<int:band_id>/add_album/', views.add_album, name='add_album'),
+  path('bands/<int:band_id>/assoc_genre/<int:genre_id>', views.assoc_genre, name='assoc_genre'),
+  path('bands/<int:band_id>/unassoc_genre/<int:genre_id>', views.unassoc_genre, name='unassoc_genre'),
+  path('genres/create/', views.GenreCreate.as_view(), name='genres_create'),
+  path('genres/', views.GenreList.as_view(), name='genres_index'),
+  path('genres/<int:pk>/', views.GenreDetail.as_view(), name='genres_detail'),
+  path('genres/<int:pk>/update/', views.GenreUpdate.as_view(), name='genres_update'),
+  path('genres/<int:pk>/delete/', views.GenreDelete.as_view(), name='genres_delete'),
 ]
